@@ -8,9 +8,17 @@ public class Lab1 {
 	*/
 	   public static int squares(int n)
 	   {
-	   
-	      return 0;  
-	   
+		   if (n < 0) {
+			   return -1;
+		   }
+		   else {
+			   int total = 0;
+			   for (int i=1; i <= n; i++) {
+				   total = (i*i) + total;
+				   
+			   }
+			   return total;
+		   }  
 	   }
 
 	/**
@@ -18,12 +26,23 @@ public class Lab1 {
 	* an integer that describes how many numbers are in the array.  
 	* The function will return the index(position) in the array with the largest number.
 	* If the array is empty or there is an error, return -1.
-	* If the maximum value is not unique, return the index of the first maximuim value.
+	* If the maximum value is not unique, return the index of the first maximum value.
 	*/
 	   public static int maxIndex(int array[],int len)
 	   {
-   
-	      return 0;
+		   if (array == null || len < 0) {
+			   return -1;
+		   }
+		   else {
+			   int high = array[0];
+			   int highIndex = 0;
+			   for (int i=0; i<len; i++) {
+				   if (array[i] > high) {
+					   highIndex = i;
+				   }
+			   }
+			   return highIndex;
+		   }
 	   }
 
 	/**
@@ -34,10 +53,12 @@ public class Lab1 {
 	*/
 	   public static boolean seek(int array[],int len,int target)
 	   {
-   
+		   for (int i=0; i<len; i++) {
+			   if (target == array[i]) {
+				   return true;
+			   }
+		   }
 	      return false;      
-	  	
-	      
 	   }
 
 
